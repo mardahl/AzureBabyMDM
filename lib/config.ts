@@ -2,7 +2,7 @@ var config = {
     service: {
         privateKey: './cert/server/privkey.pem',
         certificate: './cert/server/fullchain.pem',
-        url: 'https://babymdm.azurewebsites.net/'
+        url: 'https://babymdm.oofhours.com/'
     },
     graph: {
         "client_id": "5e5e4d8d-0ea6-4109-9c67-a37c90f947a6",
