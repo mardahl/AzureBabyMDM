@@ -1,8 +1,8 @@
 var config = {
     service: {
-        privateKey: '/etc/letsencrypt/live/babymdm.oofhours.com/privkey.pem',
-        certificate: '/etc/letsencrypt/live/babymdm.oofhours.com/fullchain.pem',
-        url: 'https://babymdm.oofhours.com'
+        privateKey: './cert/server/privkey.pem',
+        certificate: './cert/server/fullchain.pem',
+        url: 'https://babymdm.azurewebsites.net/'
     },
     graph: {
         "client_id": "5e5e4d8d-0ea6-4109-9c67-a37c90f947a6",
