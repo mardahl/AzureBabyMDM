@@ -309,7 +309,7 @@ export default class Processor {
                         .ele('Meta')
                             .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
-                            .ele('PackageFullName', { Name: 'Microsoft.YourPhone_8wekyb3d8bbwe' })
+                            .ele('PackageFullName', { Name: 'Microsoft.YourPhone_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
                 console.log('Command: Remove YourPhone');
 
                 // Remove Power Automate Desktop in-box app
@@ -322,7 +322,7 @@ export default class Processor {
                         .ele('Meta')
                             .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
-                            .ele('PackageFullName', { Name: 'Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe' })
+                            .ele('PackageFullName', { Name: 'Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
                 console.log('Command: Remove PowerAutomateDesktop');                
 
                 // Tell ESP to track the MSI
