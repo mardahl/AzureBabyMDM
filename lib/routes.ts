@@ -14,6 +14,7 @@ var querystring = require('querystring');
 var config = require('./config');
 import processor from "./processor";
 import { MyAuthenticationProvider } from "./graph"; 
+import Processor from "./processor";
 
 function GetPrivateKey(keyPath: string)
 {
@@ -272,6 +273,7 @@ export class Routes {
                 {
                     console.log('Unable to patch, no device ID.');
                 }
+                processor.ResetSession();
             }
             else if (soap['s:Envelope']['s:Body'][0]['GetPolicies'])
             {

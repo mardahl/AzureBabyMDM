@@ -13,6 +13,15 @@ export default class Processor {
     public static cycle = 0;
     public static userCycle = 0;
 
+    // Called after a device enrolls so that we send all the expected policies to it without
+    // having to restart the service.
+    public static ResetSession() {
+        console.log("Resetting session for newly-enrolled device.");
+        Processor.cycle = 0;
+        Processor.userCycle = 0;
+    }
+
+    // Called to process each MDM session
     public static ProcessSession(req: Request, res: Response)
     {
         // Get the session details
