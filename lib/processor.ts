@@ -277,7 +277,7 @@ export default class Processor {
                                     .ele('RetryInterval').txt('5');
                 console.log('Command: Exec 7Zip MSI');
                 
-                // Remove in-box app
+                // Remove Teams in-box app
                 currentCommand++;
                 bodyNode.ele('Exec')
                     .ele('CmdID').txt(currentCommand).up()
@@ -290,6 +290,34 @@ export default class Processor {
                         .ele('Data')
                             .ele('PackageFullName', {Name: 'MicrosoftTeams_8wekyb3d8bbwe', RemoveForAllUsers: '1'})
                 console.log('Command: Remove MicrosoftTeams');
+
+                // Remove YourPhone in-box app
+                currentCommand++;
+                bodyNode.ele('Exec')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up()
+                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                        .ele('Data')
+                            .ele('PackageFullName', {Name: 'Microsoft.YourPhone_8wekyb3d8bbwe', RemoveForAllUsers: '1'})
+                console.log('Command: Remove YourPhone');
+
+                // Remove Power Automate Desktop in-box app
+                currentCommand++;
+                bodyNode.ele('Exec')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up()
+                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                        .ele('Data')
+                            .ele('PackageFullName', {Name: 'Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe', RemoveForAllUsers: '1'})
+                console.log('Command: Remove PowerAutomateDesktop');                
 
                 // Tell ESP to track the MSI
                 currentCommand++;
