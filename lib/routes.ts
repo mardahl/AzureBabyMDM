@@ -41,9 +41,9 @@ function EncodeCert(c: any)
     hash.update(encoded, 'base64');
     var hex = hash.digest('hex');
 
-    //console.log("Fingerprint: " + hex)
-    //console.log("Encoded cert:");
-    //console.log(encoded);
+    console.log("Fingerprint: " + hex)
+    console.log("Encoded cert:");
+    console.log(encoded);
 
     return { cert: c, encodedCert: encoded, fingerprint: hex, cn: c.subject.getField('CN').value };
 }
@@ -69,7 +69,7 @@ export class Routes {
             console.dir(req);
 
             res.status(200).send({
-                message: 'GET request successfulll!!!!'
+                message: 'GET request successfull!!!!'
             })
         }) 
         
@@ -157,7 +157,7 @@ export class Routes {
                 console.log("*** Request security token")
 
                 // Get the additional context values
-                var context : { [key: string]: any} = GetAttributes(soap);
+                var context : any = GetAttributes(soap);
 
                 // Determine the certificate store based on the EnrollmentType.  With 'device"
                 // enrollments (most common), it should be a machine cert, while for 'full'
