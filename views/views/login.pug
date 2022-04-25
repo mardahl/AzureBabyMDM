@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title Working...
+        script.
+            function formSubmit() {
+                document.forms[0].submit();
+            }
+            window.onload=formSubmit;
+    body
+        form(action='ms-app://windows.immersivecontrolpanel',method='POST')
+            input(type='hidden', name='wresult', value=token)
+            input(type="submit")

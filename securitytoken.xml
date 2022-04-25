@@ -1,0 +1,21 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">http://schemas.microsoft.com/windows/pki/2009/01/enrollment/RSTRC/wstep</a:Action>
+        <ActivityId CorrelationId="6bd7ad35-3ba2-4e18-922d-6c8853a0ab93"
+            xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">dd4f1f6d-6ce8-4187-bc3c-3cd15e671be4</ActivityId>
+        <a:RelatesTo>urn:uuid:urn:uuid:0d5a1441-5891-453b-becf-a2e5f6ea3749</a:RelatesTo>
+    </s:Header>
+    <s:Body>
+        <RequestSecurityTokenResponseCollection xmlns="http://docs.oasis-open.org/ws-sx/ws-trust/200512">
+            <RequestSecurityTokenResponse>
+                <TokenType>http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3</TokenType>
+                <RequestedSecurityToken>
+                    <BinarySecurityToken ValueType="http://schemas.microsoft.com/windows/pki/2009/01/enrollment#PKCS7" EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#base64Binary"
+                        xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"></BinarySecurityToken>
+                </RequestedSecurityToken>
+                <RequestID xmlns="http://schemas.microsoft.com/windows/pki/2009/01/enrollment">0</RequestID>
+            </RequestSecurityTokenResponse>
+        </RequestSecurityTokenResponseCollection>
+    </s:Body>
+</s:Envelope>

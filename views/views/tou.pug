@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        link(rel='stylesheet', href='/css/oobe-desktop.css')
+    body
+        p This is your terms of use.  You must accept to join and enroll.
+        form(action=redirect_uri,id="form1",method="GET")
+            input(type='hidden', name='OpaqueBlob', id='OpaqueBlob', value=req)
+            input(type='hidden', name='IsAccepted', id='IsAccepted', value="true")
+            input(type='hidden', name='client-request-id', id='client-request-id', value=req)
+            input(type="submit", value='Accept', class='control-button button-two button_primary win-button')
+        p #{redirect_uri}
+        p #{req}
+        p #{mode}
+        p #{token}

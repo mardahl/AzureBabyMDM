@@ -1,0 +1,71 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">http://schemas.microsoft.com/windows/pki/2009/01/enrollmentpolicy/IPolicy/GetPoliciesResponse</a:Action>
+        <ActivityId CorrelationId="4550ff25-bde4-4b9c-8d83-71f998baf6af"
+            xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">dd4f1f6d-6ce8-4187-bc3c-3cd15e671be4</ActivityId>
+        <a:RelatesTo>urn:uuid:urn:uuid:72048B64-0F19-448F-8C2E-B4C661860AA0</a:RelatesTo>
+    </s:Header>
+    <s:Body>
+        <GetPoliciesResponse xmlns="http://schemas.microsoft.com/windows/pki/2009/01/enrollmentpolicy">
+            <response>
+                <policyFriendlyName p6:nil="true"
+                    xmlns:p6="http://www.w3.org/2001/XMLSchema-instance" />
+                <nextUpdateHours p6:nil="true"
+                    xmlns:p6="http://www.w3.org/2001/XMLSchema-instance" />
+                <policiesNotChanged p6:nil="true"
+                    xmlns:p6="http://www.w3.org/2001/XMLSchema-instance" />
+                <policies>
+                    <policy>
+                        <policyOIDReference>0</policyOIDReference>
+                        <cAs p8:nil="true"
+                            xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+                        <attributes>
+                            <policySchema>3</policySchema>
+                            <privateKeyAttributes>
+                                <minimalKeyLength>2048</minimalKeyLength>
+                                <keySpec p10:nil="true"
+                                    xmlns:p10="http://www.w3.org/2001/XMLSchema-instance" />
+                                <keyUsageProperty p10:nil="true"
+                                    xmlns:p10="http://www.w3.org/2001/XMLSchema-instance" />
+                                <permissions p10:nil="true"
+                                    xmlns:p10="http://www.w3.org/2001/XMLSchema-instance" />
+                                <algorithmOIDReference p10:nil="true"
+                                    xmlns:p10="http://www.w3.org/2001/XMLSchema-instance" />
+                                <cryptoProviders p10:nil="true"
+                                    xmlns:p10="http://www.w3.org/2001/XMLSchema-instance" />
+                                <useTPM>false</useTPM>
+                            </privateKeyAttributes>
+                            <supersededPolicies p9:nil="true"
+                                xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
+                            <privateKeyFlags p9:nil="true"
+                                xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
+                            <subjectNameFlags p9:nil="true"
+                                xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
+                            <enrollmentFlags p9:nil="true"
+                                xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
+                            <generalFlags p9:nil="true"
+                                xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
+                            <hashAlgorithmOIDReference>0</hashAlgorithmOIDReference>
+                            <rARequirements p9:nil="true"
+                                xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
+                            <keyArchivalAttributes p9:nil="true"
+                                xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
+                            <extensions p9:nil="true"
+                                xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
+                        </attributes>
+                    </policy>
+                </policies>
+            </response>
+            <cAs />
+            <oIDs>
+                <oID>
+                    <value>2.16.840.1.101.3.4.2.1</value>
+                    <group>2</group>
+                    <oIDReferenceID>0</oIDReferenceID>
+                    <defaultName>szOID_OIWSEC_SHA256</defaultName>
+                </oID>
+            </oIDs>
+        </GetPoliciesResponse>
+    </s:Body>
+</s:Envelope>

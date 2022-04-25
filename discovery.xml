@@ -1,0 +1,22 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">http://schemas.microsoft.com/windows/management/2012/01/enrollment/IDiscoveryService/DiscoverResponse</a:Action>
+        <ActivityId CorrelationId="dd4f1f6d-6ce8-4187-bc3c-3cd15e671be4"
+            xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">dd4f1f6d-6ce8-4187-bc3c-3cd15e671be4</ActivityId>
+        <a:RelatesTo>urn:uuid:urn:uuid:748132ec-a575-4329-b01b-6171a9cf8478</a:RelatesTo>
+    </s:Header>
+    <s:Body>
+        <DiscoverResponse xmlns="http://schemas.microsoft.com/windows/management/2012/01/enrollment">
+            <DiscoverResult>
+                <AuthPolicy>Federated</AuthPolicy>
+                <AuthUrl>prod</AuthUrl>
+                <AuthenticationServiceUrl>MYURL/login?client-request-id=dd4f1f6d-6ce8-4187-bc3c-3cd15e671be4</AuthenticationServiceUrl>
+                <EnrollmentPolicyServiceUrl>MYURL/enrollment?client-request-id=dd4f1f6d-6ce8-4187-bc3c-3cd15e671be4</EnrollmentPolicyServiceUrl>
+                <EnrollmentServiceUrl>MYURL/enrollment?client-request-id=dd4f1f6d-6ce8-4187-bc3c-3cd15e671be4</EnrollmentServiceUrl>
+                <FederatedServiceName>MYURL</FederatedServiceName>
+                <FederatedServicePolicy>HBI_FED</FederatedServicePolicy>
+            </DiscoverResult>
+        </DiscoverResponse>
+    </s:Body>
+</s:Envelope>

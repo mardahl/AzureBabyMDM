@@ -1,0 +1,107 @@
+<wap-provisioningdoc version="1.1">
+    <characteristic type="CertificateStore">
+        <characteristic type="Root">
+            <characteristic type="System">
+                <characteristic type="ROOTTHUMB">
+                    <parm name="EncodedCertificate" value="ROOTCERT" />
+                </characteristic>
+            </characteristic>
+        </characteristic>
+        <characteristic type="My">
+            <characteristic type="MYSTORE">
+                <characteristic type="MYTHUMB">
+                    <parm name="EncodedCertificate" value="MYCERT" />
+                    <characteristic type="PrivateKeyContainer" />
+                </characteristic>
+            </characteristic>
+        </characteristic>
+    </characteristic>
+    <characteristic type="APPLICATION">
+        <parm name="APPID" value="w7" />
+        <parm name="PROVIDER-ID" value="BabyMDM" />
+        <parm name="NAME" value="Oofhours" />
+        <parm name="SSPHyperlink" value="MYURL/selfservice" />
+        <parm name="ServerList" value="MYURL/cimhandler" />
+        <parm name="ADDR" value="MYURL/cimhandler" />
+        <parm name="CRLCheck" value="0"/>
+        <parm name="CONNRETRYFREQ" value="6" />
+        <parm name="INITIALBACKOFFTIME" value="30000" />
+        <parm name="MAXBACKOFFTIME" value="120000" />
+        <parm name="DEFAULTENCODING" value="application/vnd.syncml.dm+xml" />
+        <parm name="ROLE" value="4294967295" />
+        <parm name="BACKCOMPATRETRYDISABLED" />
+        <characteristic type="APPAUTH">
+            <parm name="AAUTHLEVEL" value="CLIENT" />
+            <parm name="AAUTHTYPE" value="DIGEST" />
+            <parm name="AAUTHSECRET" value="dummy" />
+            <parm name="AAUTHDATA" value="nonce" />
+        </characteristic>
+        <characteristic type="APPAUTH">
+            <parm name="AAUTHLEVEL" value="APPSRV" />
+            <parm name="AAUTHTYPE" value="DIGEST" />
+            <parm name="AAUTHNAME" value="dummy" />
+            <parm name="AAUTHSECRET" value="dummy" />
+            <parm name="AAUTHDATA" value="nonce" />
+        </characteristic>
+    </characteristic>
+    <characteristic type="Registry">
+        <characteristic type="HKLM\Software\Microsoft\Provisioning\OmaDm">
+            <parm name="ConnSendRecvTimeout" value="180000" datatype="integer" />
+        </characteristic>
+    </characteristic>
+    <characteristic type="DMClient">
+        <characteristic type="Provider">
+            <characteristic type="BabyMDM">
+                <parm name="EntDeviceName" value="Michael_Windows_10/22/2020_7:28 PM" datatype="string" />
+                <parm name="AADResourceID" value="MYURL/" datatype="string" />
+                <characteristic type="Poll">
+                    <parm name="NumberOfFirstRetries" value="5" datatype="integer" />
+                    <parm name="IntervalForFirstSetOfRetries" value="3" datatype="integer" />
+                    <parm name="NumberOfSecondRetries" value="8" datatype="integer" />
+                    <parm name="IntervalForSecondSetOfRetries" value="15" datatype="integer" />
+                    <parm name="NumberOfRemainingScheduledRetries" value="0" datatype="integer" />
+                    <parm name="IntervalForRemainingScheduledRetries" value="480" datatype="integer" />
+                </characteristic>
+                <characteristic type="FirstSyncStatus">
+                    <parm name="ExpectedPolicies" value="./Vendor/MSFT/Policy/Config" datatype="string" />
+                    <parm name="TimeOutUntilSyncFailure" value="60" datatype="integer" />
+                    <parm name="BlockInStatusPage" value="7" datatype="integer" />
+                    <parm name="SkipDeviceStatusPage" value="false" datatype="boolean" />
+                    <parm name="SkipUserStatusPage" value="false" datatype="boolean" />
+                    <parm name="AllowCollectLogsButton" value="true" datatype="boolean" />
+                    <parm name="CustomErrorText" value="Installation exceeded the time limit set by your organization. Please try again or contact your IT support person for help." datatype="string" />
+                </characteristic>
+            </characteristic>
+        </characteristic>
+    </characteristic>
+    <characteristic type="EnrollmentStatusTracking">
+        <characteristic type="DevicePreparation">
+            <characteristic type="PolicyProviders">
+                <characteristic type="BabyMDMProvider">
+                    <parm name="InstallationState" value="2" datatype="integer" />
+                </characteristic>
+            </characteristic>
+        </characteristic>
+    </characteristic>
+    <characteristic type="PassportForWork">
+       <characteristic type="f28cef80-3f9b-49d7-921e-81b2bf60fd6c">
+            <characteristic type="Policies">
+                <parm name="UsePassportForWork" value="0" datatype="boolean" />
+                <parm name="RequireSecurityDevice" value="0" datatype="boolean" />
+                <characteristic type="PINComplexity">
+                    <parm name="MinimumPINLength" value="4" datatype="integer" />
+                    <parm name="MaximumPINLength" value="127" datatype="integer" />
+                    <parm name="UppercaseLetters" value="2" datatype="integer" />
+                    <parm name="LowercaseLetters" value="2" datatype="integer" />
+                    <parm name="SpecialCharacters" value="2" datatype="integer" />
+                    <parm name="History" value="0" datatype="integer" />
+                    <parm name="Expiration" value="0" datatype="integer" />
+                </characteristic>
+                <characteristic type="Remote">
+                    <parm name="UseRemotePassport" value="1" datatype="boolean" />
+                </characteristic>
+            </characteristic>
+        </characteristic>
+        <parm name="UseBiometrics" value="1" datatype="boolean" />
+    </characteristic>
+</wap-provisioningdoc>
