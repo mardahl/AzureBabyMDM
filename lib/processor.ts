@@ -276,7 +276,21 @@ export default class Processor {
                                     .ele('RetryCount').txt('3').up()
                                     .ele('RetryInterval').txt('5');
                 console.log('Command: Exec 7Zip MSI');
-                    
+                
+                // Remove in-box app
+                currentCommand++;
+                bodyNode.ele('Exec')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up()
+                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                        .ele('Data')
+                            .ele('PackageFullName', {Name: 'MicrosoftTeams_8wekyb3d8bbwe', RemoveForAllUsers: '1'})
+                console.log('Command: Remove MicrosoftTeams');
+
                 // Tell ESP to track the MSI
                 currentCommand++;
                 bodyNode.ele('Replace')
