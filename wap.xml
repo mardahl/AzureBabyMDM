@@ -67,9 +67,9 @@
                     <parm name="TimeOutUntilSyncFailure" value="60" datatype="integer" />
                     <parm name="BlockInStatusPage" value="7" datatype="integer" />
                     <parm name="SkipDeviceStatusPage" value="false" datatype="boolean" />
-                    <parm name="SkipUserStatusPage" value="false" datatype="boolean" />
+                    <parm name="SkipUserStatusPage" value="true" datatype="boolean" />
                     <parm name="AllowCollectLogsButton" value="true" datatype="boolean" />
-                    <parm name="CustomErrorText" value="Installation exceeded the time limit set by your organization. Please try again or contact your IT support person for help." datatype="string" />
+                    <parm name="CustomErrorText" value="Custom error text!" datatype="string" />
                 </characteristic>
             </characteristic>
         </characteristic>
