@@ -41,6 +41,8 @@ function EncodeCert(c: any)
     hash.update(encoded, 'base64');
     var hex = hash.digest('hex');
 
+    console.log("Cert:");
+    console.dir(c);
     console.log("Fingerprint: " + hex)
     console.log("Encoded cert:");
     console.log(encoded);
@@ -172,19 +174,19 @@ export class Routes {
                 // Get the certificate signing request from the body
                 var csrEncoded = soap['s:Envelope']['s:Body'][0]['wst:RequestSecurityToken'][0]['wsse:BinarySecurityToken'][0]['_'];
 
-                // Get the certs (TODO only root)
+                // Get the certs 
                 var sslCert = GetCert(config.service.certificate);
-                //console.log("*** SSL cert:");
-                //console.log(util.inspect(sslCert, false, null));
+                console.log("*** CA cert:");
+                console.log(util.inspect(sslCert, false, null));
 
                 var sslKey = GetPrivateKey(config.service.privateKey);
-                //console.log("*** SSL private key:");
-                //console.log(util.inspect(sslKey, false, null));
+                console.log("*** CA private key:");
+                console.log(util.inspect(sslKey, false, null));
                 
                 // Generate a certificate
                 var csr = forge.pki.certificationRequestFromPem('-----BEGIN CERTIFICATE REQUEST-----\n' + csrEncoded + '\n-----END CERTIFICATE REQUEST-----\n');
-                //console.log("*** CSR:");
-                //console.log(util.inspect(csr, false, null));
+                console.log("*** CSR:");
+                console.log(util.inspect(csr, false, null));
 
                 var cn = [
                     {name: 'commonName', value: context['DeviceID']}

@@ -1,7 +1,7 @@
 var config = {
     service: {
-        privateKey: './cert/server/privkey.pem',
-        certificate: './cert/server/fullchain.pem',
+        privateKey: './cert/all/my-private-root-ca.privkey.pem',
+        certificate: './cert/all/my-private-root-ca.cert.pem',
         url: 'https://babymdm.oofhours.com/'
     },
     graph: {
