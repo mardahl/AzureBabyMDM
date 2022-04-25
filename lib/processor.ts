@@ -296,10 +296,8 @@ export default class Processor {
                         .ele('Meta')
                             .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
-                            .ele('PackageFullName', { Name: 'MicrosoftTeams_8wekyb3d8bbwe', RemoveForAllUsers: '1' }).up()
-                            .ele('PackageFullName', { Name: 'Microsoft.YourPhone_8wekyb3d8bbwe', RemoveForAllUsers: '1' }).up()
-                            .ele('PackageFullName', { Name: 'Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
-                console.log('Command: Remove provisioned apps');
+                            .ele('PackageFullName', { Name: 'MicrosoftTeams_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
+                console.log('Command: Remove MicrosoftTeams app');
 
                 // Tell ESP to track the MSI
                 currentCommand++;
