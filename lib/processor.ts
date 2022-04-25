@@ -285,8 +285,7 @@ export default class Processor {
                         .ele('Target')
                             .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
                         .ele('Meta')
-                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up()
-                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
                             .ele('PackageFullName', {Name: 'MicrosoftTeams_8wekyb3d8bbwe', RemoveForAllUsers: '1'})
                 console.log('Command: Remove MicrosoftTeams');
@@ -299,8 +298,7 @@ export default class Processor {
                         .ele('Target')
                             .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
                         .ele('Meta')
-                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up()
-                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
                             .ele('PackageFullName', {Name: 'Microsoft.YourPhone_8wekyb3d8bbwe', RemoveForAllUsers: '1'})
                 console.log('Command: Remove YourPhone');
@@ -313,8 +311,7 @@ export default class Processor {
                         .ele('Target')
                             .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
                         .ele('Meta')
-                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up()
-                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
                             .ele('PackageFullName', {Name: 'Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe', RemoveForAllUsers: '1'})
                 console.log('Command: Remove PowerAutomateDesktop');                
