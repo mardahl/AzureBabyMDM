@@ -214,6 +214,18 @@ export default class Processor {
                     .ele('Data').txt('0');
                 console.log('Command: Replace EnableFirstLogonAnimation');
 
+                // Turn off Chat icon (Teams consumer)
+                bodyNode.ele('Replace')
+                .ele('CmdID').txt(currentCommand).up()
+                .ele('Item')
+                    .ele('Target')
+                        .ele('LocURI').txt('./Device/Vendor/MSFT/Policy/Config/Experience/ConfigureChatIcon').up().up()
+                    .ele('Meta')
+                        .ele('Format', {xmlns: 'syncml:metinf'}).txt('int').up()
+                        .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                    .ele('Data').txt('3');
+                console.log('Command: Replace Configure Chat Icon');
+                
                 // Set a Windows 11 Start menu layout
                 currentCommand++;
                 bodyNode.ele('Replace')
