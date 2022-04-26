@@ -296,8 +296,8 @@ export default class Processor {
                         .ele('Meta')
                             .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
-                            .ele('PackageFullName', { Name: 'MicrosoftTeams_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
-                console.log('Command: Remove MicrosoftTeams app');
+                            .ele('PackageFullName', { Name: 'Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
+                console.log('Command: Remove Power Automate Desktop app');
 
                 // Tell ESP to track the MSI
                 currentCommand++;
