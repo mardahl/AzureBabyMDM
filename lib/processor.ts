@@ -299,6 +299,32 @@ export default class Processor {
                             .ele('Package', { Name: 'Microsoft.PowerAutomateDesktop_10.0.561.0_neutral_~_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
                 console.log('Command: Remove Power Automate Desktop app');
 
+                // Remove Your Phone in-box app
+                currentCommand++;
+                bodyNode.ele('Exec')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
+                        .ele('Data')
+                            .ele('Package', { Name: 'Microsoft.YourPhone_2019.430.2026.0_neutral_~_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
+                console.log('Command: Remove Your Phone app');
+
+                // Remove Cortana in-box app
+                currentCommand++;
+                bodyNode.ele('Exec')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
+                        .ele('Data')
+                            .ele('Package', { Name: 'Microsoft.549981C3F5F10_2.2106.2807.0_neutral_~_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
+                console.log('Command: Remove Cortana app');
+                
                 // Tell ESP to track the MSI
                 currentCommand++;
                 bodyNode.ele('Replace')
