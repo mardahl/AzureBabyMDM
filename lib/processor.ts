@@ -296,7 +296,7 @@ export default class Processor {
                         .ele('Meta')
                             .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
-                            .ele('Package', { Name: 'Microsoft.PowerAutomateDesktop_1.0.65.0_x64__8wekyb3d8bbwe', RemoveForAllUsers: '1' })
+                            .ele('Package', { Name: 'Microsoft.PowerAutomateDesktop_10.0.561.0_neutral_~_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
                 console.log('Command: Remove Power Automate Desktop app');
 
                 // Tell ESP to track the MSI
