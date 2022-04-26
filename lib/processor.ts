@@ -286,7 +286,7 @@ export default class Processor {
                                     .ele('RetryInterval').txt('5');
                 console.log('Command: Exec 7Zip MSI');
                 
-                // Remove Teams in-box app
+                // Remove Power Automate Desktop in-box app
                 currentCommand++;
                 bodyNode.ele('Exec')
                     .ele('CmdID').txt(currentCommand).up()
@@ -296,7 +296,7 @@ export default class Processor {
                         .ele('Meta')
                             .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
-                            .ele('PackageFullName', { Name: 'Microsoft.PowerAutomateDesktop_1.0.65.0_x64__8wekyb3d8bbwe', RemoveForAllUsers: '1' })
+                            .ele('Package', { Name: 'Microsoft.PowerAutomateDesktop_1.0.65.0_x64__8wekyb3d8bbwe', RemoveForAllUsers: '1' })
                 console.log('Command: Remove Power Automate Desktop app');
 
                 // Tell ESP to track the MSI
