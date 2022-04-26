@@ -336,6 +336,19 @@ export default class Processor {
                         .ele('Data')
                             .ele('Package', { Name: 'Microsoft.549981C3F5F10_2.2106.2807.0_neutral_~_8wekyb3d8bbwe', RemoveForAllUsers: '1' })
                 console.log('Command: Remove Cortana app');
+
+                // Remove Widgets in-box app
+                currentCommand++;
+                bodyNode.ele('Exec')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseModernAppManagement/AppManagement/RemovePackage').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
+                        .ele('Data')
+                            .ele('Package', { Name: 'MicrosoftWindows.Client.WebExperience_421.20045.455.0_neutral_~_cw5n1h2txyewy', RemoveForAllUsers: '1' })
+                console.log('Command: Remove Widgets app');
                 
                 // Tell ESP to track the MSI
                 currentCommand++;
