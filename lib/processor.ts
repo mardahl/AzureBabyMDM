@@ -231,7 +231,7 @@ export default class Processor {
                 // Set a Windows 11 Start menu layout
                 var pinnedJson = '{ "pinnedList": [ { "desktopAppId": "MSEdge" } ] }';
                 if (Processor.windowsVersion == "10.0.22598.1") {
-                    pinnedJson = '{"pinnedList":[{"desktopAppLink":"%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Edge.lnk"},{"packagedAppId":"Microsoft.WindowsCalculator_8wekyb3d8bbwe!App"}]}';
+                    pinnedJson = '{"pinnedList":[ { "desktopAppId": "MSEdge"}, { "packagedAppId":"Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" } ] }';
                 }
                 currentCommand++;
                 bodyNode.ele('Replace')
