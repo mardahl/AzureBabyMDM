@@ -241,7 +241,27 @@ export default class Processor {
                             .ele('LocURI').txt('./Vendor/MSFT/Policy/Config/Start/ConfigureStartPins').up().up()
                         .ele('Data').txt(pinnedJson);
                 console.log('Command: Replace ConfigureStartPins');
-                
+
+                // Force desktop wallpaper
+                currentCommand++;
+                bodyNode.ele('Replace')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Vendor/MSFT/Personalization/DesktopImageUrl').up().up()
+                        .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium.jpg');
+                console.log('Command: Replace Desktop Image URL');
+
+                // Force lock screen image
+                currentCommand++;
+                bodyNode.ele('Replace')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Vendor/MSFT/Personalization/LockScreenImageUrl').up().up()
+                        .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium.jpg');
+                console.log('Command: Replace Lock Screen Image URL');
+                                
                 // Ask for for the device architecture
                 currentCommand++;
                 bodyNode.ele('Get')
