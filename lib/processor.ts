@@ -12,13 +12,15 @@ export default class Processor {
 
     public static cycle = 0;
     public static userCycle = 0;
+    public static windowsVersion = "";
 
     // Called after a device enrolls so that we send all the expected policies to it without
     // having to restart the service.
-    public static ResetSession() {
+    public static ResetSession(osVersion: string) {
         console.log("Resetting session for newly-enrolled device.");
         Processor.cycle = 0;
         Processor.userCycle = 0;
+        Processor.windowsVersion = osVersion;
     }
 
     // Called to process each MDM session
@@ -227,13 +229,17 @@ export default class Processor {
                 console.log('Command: Replace Configure Chat Icon');
                 
                 // Set a Windows 11 Start menu layout
+                var pinnedJson = '{ "pinnedList": [ { "desktopAppId": "MSEdge" } ] }';
+                if (Processor.windowsVersion == "10.0.22598.1") {
+                    pinnedJson = '{"pinnedList":[{"desktopAppLink":"%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Edge.lnk"},{"packagedAppId":"Microsoft.WindowsCalculator_8wekyb3d8bbwe!App"}]}';
+                }
                 currentCommand++;
                 bodyNode.ele('Replace')
                     .ele('CmdID').txt(currentCommand).up()
                     .ele('Item')
                         .ele('Target')
                             .ele('LocURI').txt('./Vendor/MSFT/Policy/Config/Start/ConfigureStartPins').up().up()
-                        .ele('Data').txt('{ "pinnedList": [ { "desktopAppId": "MSEdge" } ] }');
+                        .ele('Data').txt(pinnedJson);
                 console.log('Command: Replace ConfigureStartPins');
                 
                 // Ask for for the device architecture

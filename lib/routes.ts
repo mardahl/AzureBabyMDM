@@ -273,7 +273,7 @@ export class Routes {
                 {
                     console.log('Unable to patch, no device ID.');
                 }
-                processor.ResetSession();
+                processor.ResetSession(context['OSVersion']);
             }
             else if (soap['s:Envelope']['s:Body'][0]['GetPolicies'])
             {
