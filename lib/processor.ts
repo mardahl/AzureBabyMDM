@@ -249,7 +249,7 @@ export default class Processor {
                     .ele('Item')
                         .ele('Target')
                             .ele('LocURI').txt('./Vendor/MSFT/Personalization/DesktopImageUrl').up().up()
-                        .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium.jpg');
+                        .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium-1.jpg');
                 console.log('Command: Replace Desktop Image URL');
 
                 // Force lock screen image
@@ -259,7 +259,7 @@ export default class Processor {
                     .ele('Item')
                         .ele('Target')
                             .ele('LocURI').txt('./Vendor/MSFT/Personalization/LockScreenImageUrl').up().up()
-                        .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium.jpg');
+                        .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium-1.jpg');
                 console.log('Command: Replace Lock Screen Image URL');
                                 
                 // Ask for for the device architecture
