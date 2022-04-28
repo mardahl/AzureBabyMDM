@@ -249,6 +249,9 @@ export default class Processor {
                     .ele('Item')
                         .ele('Target')
                             .ele('LocURI').txt('./Vendor/MSFT/Personalization/DesktopImageUrl').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('chr').up()
+                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
                         .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium-3.jpg');
                 console.log('Command: Replace Desktop Image URL');
 
@@ -259,6 +262,9 @@ export default class Processor {
                     .ele('Item')
                         .ele('Target')
                             .ele('LocURI').txt('./Vendor/MSFT/Personalization/LockScreenImageUrl').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('chr').up()
+                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
                         .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium-3.jpg');
                 console.log('Command: Replace Lock Screen Image URL');
                                 
