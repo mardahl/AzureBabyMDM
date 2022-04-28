@@ -373,7 +373,7 @@ export default class Processor {
                         .ele('Meta')
                             .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up().up()
                         .ele('Data')
-                            .ele('Package', { Name: 'MicrosoftWindows.Client.WebExperience_421.20045.455.0_neutral_~_cw5n1h2txyewy', RemoveForAllUsers: '1' })
+                            .ele('Package', { Name: 'MicrosoftWindows.Client.WebExperience_321.14700.0.9_neutral_~_cw5n1h2txyewy', RemoveForAllUsers: '1' })
                 console.log('Command: Remove Widgets app');
                 
                 // Tell ESP to track the MSI
