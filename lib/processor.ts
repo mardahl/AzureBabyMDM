@@ -267,7 +267,20 @@ export default class Processor {
                             .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
                         .ele('Data').txt('https://oofhours.files.wordpress.com/2022/04/tanium-3.jpg');
                 console.log('Command: Replace Lock Screen Image URL');
-                                
+                        
+                // Set TenantLockdown (network required) policy
+                currentCommand++;
+                bodyNode.ele('Replace')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Vendor/MSFT/TenantLockdown').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('bool').up()
+                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                        .ele('Data').txt('true');
+                console.log('Command: Replace TenantLockdown');
+                
                 // Ask for for the device architecture
                 currentCommand++;
                 bodyNode.ele('Get')
