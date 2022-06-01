@@ -274,12 +274,12 @@ export default class Processor {
                     .ele('CmdID').txt(currentCommand).up()
                     .ele('Item')
                         .ele('Target')
-                            .ele('LocURI').txt('./Vendor/MSFT/TenantLockdown').up().up()
+                            .ele('LocURI').txt('./Vendor/MSFT/TenantLockdown/RequireNetworkInOOBE').up().up()
                         .ele('Meta')
                             .ele('Format', {xmlns: 'syncml:metinf'}).txt('bool').up()
                             .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
                         .ele('Data').txt('true');
-                console.log('Command: Replace TenantLockdown');
+                console.log('Command: Replace RequireNetworkInOOBE');
                 
                 // Ask for for the device architecture
                 currentCommand++;
