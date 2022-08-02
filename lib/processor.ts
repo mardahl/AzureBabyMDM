@@ -308,6 +308,14 @@ export default class Processor {
                             .ele('LocURI').txt('./DevDetail/Ext/DeviceHardwareData');        
                 console.log('Command: Get DeviceHardwareData (Autopilot hash)');
 
+                // Ask for the Autopilot remediation info
+                currentCommand++;
+                bodyNode.ele('Get')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Vendor/MSFT/WindowsAutopilot/HardwareMismatchRemediationData');        
+                console.log('Command: Get HardwareMismatchRemediationData (Autopilot remediation)');
 
                 // Add the MSI to install
                 currentCommand++;
