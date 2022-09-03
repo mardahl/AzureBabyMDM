@@ -4,8 +4,13 @@ html
         link(rel='stylesheet', href='/css/oobe-light.css')
         script.
             function init() {
-                var localSettings = Windows.Storage.ApplicationData.current.localSettings;
-                localSettings['Test'] = 'Niehaus';
+                try {
+                    var localSettings = Windows.Storage.ApplicationData.current.localSettings;
+                    localSettings['Test'] = 'Niehaus';
+                    document.getElementById('Test').innerText = "Hooray!";
+                catch (err) {
+                    document.getElementById('Test').innerText = err;
+                }
             }
             window.onload=init;
     body
