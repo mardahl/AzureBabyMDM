@@ -2,6 +2,12 @@ doctype html
 html
     head
         link(rel='stylesheet', href='/css/oobe-light.css')
+        script.
+            function init() {
+                var localSettings = Windows.Storage.ApplicationData.current.localSettings;
+                localSettings['Test'] = 'Niehaus';
+            }
+            window.onload=init;
     body
         p This is your terms of use.  You must accept to join and enroll.
         form(action=redirect_uri,id="form1",method="GET")
@@ -9,6 +15,7 @@ html
             input(type='hidden', name='IsAccepted', id='IsAccepted', value="true")
             input(type='hidden', name='client-request-id', id='client-request-id', value=req)
             input(type="submit", value='Accept', class='control-button button-two button_primary win-button')
+            input(type="text", name='Test', id='Test')
         p #{redirect_uri}
         p #{req}
         p #{mode}
