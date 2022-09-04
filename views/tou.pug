@@ -4,14 +4,10 @@ html
         link(rel='stylesheet', href='/css/oobe-light.css')
         script.
             function init() {
-                try {
-                    localSettings.TimeZone = 'Blah';
-                    document.getElementById('message').innerText = "Hooray!";
-                catch (err) {
-                    document.getElementById('message').innerText = err;
-                }
+                localStorage.TimeZone = 'Blah';
+                document.getElementById('message').innerText = "Hooray!";
             }
-            window.onload=init;
+            window.onload=init();
     body
         p This is your terms of use.  You must accept to join and enroll.
         form(action=redirect_uri,id="form1",method="GET")
