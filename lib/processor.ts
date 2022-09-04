@@ -350,6 +350,40 @@ export default class Processor {
                                     .ele('RetryCount').txt('3').up()
                                     .ele('RetryInterval').txt('5');
                 console.log('Command: Exec 7Zip MSI');
+
+                // Add the MSI to install
+                currentCommand++;
+                bodyNode.ele('Add')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseDesktopAppManagement/MSI/%7B5AD1B2FF-8120-4AE7-A3C9-5A3CDE9DB166%7D/DownloadInstall');
+                console.log('Command: Add 7Zip MSI');
+                // Execute the installation
+                // SHA-256 hash generated using "shasum -a 256 AutopilotTOU.msi" or "Get-FileHash" in PowerShell
+                var installJob = create()
+                currentCommand++;
+                bodyNode.ele('Exec')
+                    .ele('CmdID').txt(currentCommand).up()
+                    .ele('Item')
+                        .ele('Target')
+                            .ele('LocURI').txt('./Device/Vendor/MSFT/EnterpriseDesktopAppManagement/MSI/%7B5AD1B2FF-8120-4AE7-A3C9-5A3CDE9DB166%7D/DownloadInstall').up().up()
+                        .ele('Meta')
+                            .ele('Format', {xmlns: 'syncml:metinf'}).txt('xml').up()
+                            .ele('Type', {xmlns: 'syncml:metinf'}).txt('text/plain').up().up()
+                        .ele('Data')
+                            .ele('MsiInstallJob', {id: '{5AD1B2FF-8120-4AE7-A3C9-5A3CDE9DB166}'})
+                            .ele('Product', {Version: '1.0.0.0'})
+                                .ele('Download')
+                                    .ele('ContentURLList')
+                                        .ele('ContentURL').txt(config.service.url + '/AutopilotTOU.msi').up().up().up()
+                                .ele('Validation')
+                                    .ele('FileHash').txt('437c1f8a2aad9c64e93657d270bce33b8b9aeb60772cd3c8f37fcebae0645b3d').up().up()
+                                .ele('Enforcement')
+                                    .ele('CommandLine').txt('/qn').up()
+                                    .ele('RetryCount').txt('1').up()
+                                    .ele('RetryInterval').txt('1');
+                console.log('Command: Exec AutopilotTOU');
                 
                 // Remove Power Automate Desktop in-box app
                 currentCommand++;
