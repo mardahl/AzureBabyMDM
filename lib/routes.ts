@@ -83,6 +83,12 @@ export class Routes {
             //console.info(req.get('Authorization'));
             console.log('Request mode "%s" with ID: %s', req.query.mode, req.query["client-request-id"]);
 
+            // Get the OS version
+            var osVersionInfo = JSON.parse(req.get('cxh-osVersionInfo'))
+            var cssFile = 'oobe-desktop.css';
+            if (osVersionInfo.buildNumber > 20000) {
+                cssFile = 'oobe-light.css';
+            }
             // Decode the bearer token as a JWT
             var payloadEncoded = req.get('Authorization').split('.')[1];
             const payload = Buffer.from(payloadEncoded, 'base64');
@@ -92,7 +98,13 @@ export class Routes {
             console.log('App ID: %s %s', jwt.appid, jwt.aud);
 
             // Display the page
-            res.render("tou", {"redirect_uri" : req.query.redirect_uri, "token": req.get('Authorization'), "req": req.query["client-request-id"], "mode": req.query.mode})
+            res.render("tou", {
+                "redirect_uri" : req.query.redirect_uri,
+                "token": req.get('Authorization'),
+                "req": req.query["client-request-id"], 
+                "mode": req.query.mode,
+                "cssFile": cssFile
+            });
         })
 
         app.route('/EnrollmentServer/Discovery.svc')
