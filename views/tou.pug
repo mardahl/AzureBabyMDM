@@ -1,22 +1,31 @@
 doctype html
 html
     head
+        // Windows 10:
+        // link(rel='stylesheet', href='/css/oobe-desktop.css')
+        // Windows 11:
         link(rel='stylesheet', href='/css/oobe-light.css')
         script.
-            function init() {
-                localStorage.TimeZone = 'Blah';
-                document.getElementById('message').innerText = "Hooray!";
+            function doIt() {
+                // Save the time zone ID in local storage
+                localStorage.TimeZone = document.getElementById('TZ').value;
+                // Submit the form to continue
+                document.forms[0].submit();
             }
-            window.onload=init();
     body
         p This is your terms of use.  You must accept to join and enroll.
         form(action=redirect_uri,id="form1",method="GET")
             input(type='hidden', name='OpaqueBlob', id='OpaqueBlob', value=req)
             input(type='hidden', name='IsAccepted', id='IsAccepted', value="true")
             input(type='hidden', name='client-request-id', id='client-request-id', value=req)
-            input(type="submit", value='Accept', class='control-button button-two button_primary win-button')
+            label(for='tz') Time zone:
+            select(name='TZ', id='TZ')
+                option(value="Pacific Standard Time") UTC-08:00 Pacific Time
+                option(value="Mountain Standard Time") UTC-07:00 Mountain Time
+                option(value="Central Standard Time") UTC-06:00 Central Time
+                option(value="Eastern Standard Time") UTC-05:00 Eastern Time
+            button(onclick='doIt();') Accept
         p #{redirect_uri}
         p #{req}
         p #{mode}
         p #{token}
-        div#message
