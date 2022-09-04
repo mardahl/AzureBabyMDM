@@ -5,11 +5,10 @@ html
         script.
             function init() {
                 try {
-                    var localSettings = Windows.Storage.ApplicationData.current.localSettings;
-                    localSettings['Test'] = 'Niehaus';
-                    document.getElementById('Test').innerText = "Hooray!";
+                    localSettings.TimeZone = 'Blah';
+                    document.getElementById('message').innerText = "Hooray!";
                 catch (err) {
-                    document.getElementById('Test').innerText = err;
+                    document.getElementById('message').innerText = err;
                 }
             }
             window.onload=init;
@@ -20,8 +19,8 @@ html
             input(type='hidden', name='IsAccepted', id='IsAccepted', value="true")
             input(type='hidden', name='client-request-id', id='client-request-id', value=req)
             input(type="submit", value='Accept', class='control-button button-two button_primary win-button')
-            input(type="text", name='Test', id='Test')
         p #{redirect_uri}
         p #{req}
         p #{mode}
         p #{token}
+        div#message
